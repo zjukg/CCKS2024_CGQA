@@ -1,0 +1,70 @@
+[
+    {
+      "role": "system",
+      "content": "Now you are learning to write conditional graph queries for natural language questions. \nThe conditional graph query function is:\ndef get_information(relation, tail_entity, head_entity, key, value):\n\"\"\"\n    This function retrieves information by querying a data source using a given relation and tail entity as search criteria.\n    \n    Args:\n        relation (str): The relation to the query that matches the tail_entity or contains the  head_entity.\n        tail_entity (str): The tail entity associated with the relation.\n        head_entity (str): The head entity belongs to the relation.\n        key (str):  The key to query that matches the tail_entity or head_entity.\n        value (str):  The value associated with or belongs to the key.\n        \n    Returns:\n        list: A list of query results.\n    \"\"\"\n\nTo finish the question correctly, you can combine the Set and Calculator functions.\n\nSet functions:\n- set_union(set1, set2)\n- set_intersection(set1, set2)\n- set_difference(set1, set2)\n- set_negation(set1)\n...\n\nNote: \n1. In get_information function, tail_entity and head_entity cannot occur together.\n"
+    },
+    {
+        "role": "user",
+        "content": "Question: 陈望道的学生中，有多少人的毕业院校是广西师范大学？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到陈望道的学生\nQuery1: \"get_information(relation='学生', head_entity='陈望道')\"\nStep2: 找到广西师范大学的学生\nQuery2: \"get_information(relation='毕业院校', tail_entity='广西师范大学')\"\nStep3: 求两个集合的交集\nQuery3: \"set_intersection(set1='output_of_query2', set2='output_of_query1')\"\nStep4: 计算集合的大小\nQuery4: \"count(set='output_of_query3')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 黄晓君和罗文裕共同创作过的音乐作品有哪些？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到黄晓君的音乐作品\nQuery1: \"get_information(relation='音乐作品', head_entity='黄晓君')\"\nStep2: 找到罗文裕的音乐作品\nQuery2: \"get_information(relation='音乐作品', head_entity='罗文裕')\"\nStep3: 求两个集合的交集\nQuery3: \"set_intersection(set1='output_of_query1', set2='output_of_query2')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 胡淑仪的儿子是谁？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到胡淑仪的儿子\nQuery1: \"get_information(relation='儿子', head_entity='胡淑仪')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 王喆的主要作品和音乐作品总共有多少首？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到王喆的主要作品\nQuery1: \"get_information(relation='主要作品', head_entity='王喆')\"\nStep2: 找到王喆的音乐作品\nQuery2: \"get_information(relation='音乐作品', head_entity='王喆')\"\nStep3: 求两个集合的并集\nQuery3: \"set_union(set1='output_of_query1', set2='output_of_query2')\"\nStep4: 计算集合的大小\nQuery4: \"count(set='output_of_query3')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 杜并是谁的曾祖父？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到杜并的曾祖父\nQuery1: \"get_information(relation='曾祖父', head_entity='杜并')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 破晓之战的主要演员有多少人？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到破晓之战的主要演员\nQuery1: \"get_information(relation='主要演员', head_entity='破晓之战')\"\nStep2: 计算集合的大小\nQuery2: \"count(set='output_of_query1')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 李建复的音乐作品中，有几首是他的代表作品？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到李建复的音乐作品\nQuery1: \"get_information(relation='音乐作品', head_entity='李建复')\"\nStep2: 找到李建复的代表作品\nQuery2: \"get_information(relation='代表作品', head_entity='李建复')\"\nStep3: 求两个集合的交集\nQuery3: \"set_intersection(set1='output_of_query2', set2='output_of_query1')\"\nStep4: 计算集合的大小\nQuery4: \"count(set='output_of_query3')\""
+    },
+    {
+      "role": "user",
+      "content": "Question: 参演过顶楼的演员中，有哪些人的代表作品是熔炉？"
+    },
+    {
+      "role": "assistant",
+      "content": "Step1: 找到参演过顶楼的演员\nQuery1: \"get_information(relation='主要演员', head_entity='顶楼')\"\nStep2: 找到参演熔炉的演员\nQuery2: \"get_information(relation='主要演员', head_entity='熔炉')\"\nStep3: 求两个集合的交集\nQuery3: \"set_intersection(set1='output_of_query2', set2='output_of_query1')\""
+    }
+]
